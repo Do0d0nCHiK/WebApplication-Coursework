@@ -1,0 +1,82 @@
+﻿@page
+@model WebApplication2.Pages.ViewCarsParkModel
+@{
+}
+<head>
+    <title>CarsPark</title>
+    <style>
+        body {
+            background: rgb(25, 25, 25);
+        }
+    </style>
+    <link rel="stylesheet" href="~/css/MyStyles.css" />
+</head>
+<body>
+    <h1 class="h1" style="color:white; text-align:center;">Автопарк</h1>
+    <form method="get">
+        <input type="text" class="bg-dark text-light" name="SearchString" value="@Model.SearchString" placeholder="Поиск машины..." />
+        <button type="submit">🔍</button>
+    </form>
+    <table class="table">
+        <thead>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "ID"?"ID_desc":"ID")">
+                    ID    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "Brand"?"Brand_desc":"Brand")">
+                    Марка    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "Model"?"Model_desc":"Model")">
+                    Модель    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "Release"?"Release_desc":"Release")">
+                    Год 
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "Power"?"Power_desc":"Power")">
+                    Мощность    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "NumberPlate"?"NumberPlate_desc":"NumberPlate")">
+                    Гос. номер    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewCarsPark" asp-route-SortOrder="@(Model.SortOrder == "Cost"?"Const_desc":"Cost")">
+                    Цена руб./сут.    
+                </a>
+            </th>
+            <th class="th-table-light">Действия</th>
+        </thead>
+        <tbody>
+            @foreach(var carinfo in Model.CarsInfo)
+            {
+                <tr>
+                    <td class="text-light">@carinfo.Id</td>
+                    <td class="text-light">@carinfo.Brand</td>
+                    <td class="text-light">@carinfo.Model</td>
+                    <td class="text-light">@carinfo.Release</td>
+                    <td class="text-light">@carinfo.Power</td>
+                    <td class="text-light">@carinfo.NumberPlate</td>
+                    <td class="text-light">@carinfo.Cost</td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="id" value="@carinfo.Id" />
+                            <button type="submit" class="btn btn-danger"asp-page-handler="Delete">
+                                Удалить
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

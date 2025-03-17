@@ -1,0 +1,73 @@
+﻿@page
+@model WebApplication2.Pages.ViewRentModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/MyStyles.css" />
+    <style>
+        body{
+            background-color: rgb(25,25,25);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1" style="color:white; text-align:center;">Данные об аренде</h1>
+    <form method="get">
+        <input type="text" class="bg-dark text-light" name="SearchString" value="@Model.SearchString" placeholder="Поиск данных..." />
+        <button type="submit">🔍</button>
+    </form>
+    <table class="table">
+        <thead>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "RentID"?"RentID_desc":"RentID")">
+                    ID    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "ClientID"?"ClientID_desc":"ClientID")">
+                    Клиент
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "CarID"?"CarID_desc":"CarID")">
+                    Машина
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "StartDate"?"StartDate_desc":"StartDate")">
+                    Начало аренды    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "Period"?"Period_desc":"PeriodID")">
+                    Дней аренды
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "EndDate"?"EndDate_desc":"EndDateID")">
+                    Окончание аренды
+                </a>
+            </th>
+            <th class="th-table-light">Действие</th>
+        </thead>
+        <tbody>
+            @foreach(var rentinfo in Model.rentInfos)
+            {
+                <tr>
+                    <td class="text-light">@rentinfo.RentID</td>
+                    <td class="text-light">@rentinfo.ClientID</td>
+                    <td class="text-light">@rentinfo.CarID</td>
+                    <td class="text-light">@rentinfo.StartDate</td>
+                    <td class="text-light">@rentinfo.Period</td>
+                    <td class="text-light">@rentinfo.EndDate</td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="id" value="@rentinfo.RentID" />
+                            <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Удвлить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

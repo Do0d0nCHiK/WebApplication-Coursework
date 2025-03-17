@@ -1,0 +1,77 @@
+﻿@page
+@model WebApplication2.Pages.ViewClientsModel
+@{
+}
+<head>
+    <title>Clients</title>
+    <link rel="stylesheet" href="~/css/MyStyles.css" />
+    <style>
+        body{
+            background: rgb(25, 25, 25); 
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1" style="color:white; text-align:center;">Клиенты</h1>
+    <form method="get">
+        <input type="text" class="bg-dark text-light" name="SearchString" value="@Model.SearchString" placeholder="Поиск клиента..." />
+        <button type="submit">🔍</button>
+    </form>
+    <table class="table">
+        <thead>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "ID"?"ID_desc":"ID")">
+                    ID    
+                </a>
+            </th>
+            <th class="th-table-light">
+            <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "FirstName"?"FirstName_desc":"FirstName")">
+                    Имя    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "LastName"?"LastName_desc":"LastName")">
+                    Фамилия    
+                </a>    
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "FatherName"?"FatherName_desc":"FatherName")">
+                    Отчество    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "PhoneNumber"?"PhoneNumber_desc":"PhoneNumber")">
+                    Номер телефона    
+                </a>
+            </th>
+            <th class="th-table-light">
+                <a class="link-light" asp-page="./ViewClients" asp-route-SortOrder="@(Model.SortOrder == "Passport"?"Passport_desc":"Passport")">
+                    Паспорт    
+                </a>
+            </th>
+            <th class="th-table-light">Действие</th>
+        </thead>
+        <tbody>
+            @foreach(var contact in Model.Contacts)
+            {
+                <tr>
+                    <td class="text-light">@contact.Id</td>
+                    <td class="text-light">@contact.FirstName</td>
+                    <td class="text-light">@contact.LastName</td>
+                    <td class="text-light">@contact.FatherName</td>
+                    <td class="text-light">@contact.PhoneNumber</td>
+                    <td class="text-light">@contact.Passport</td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="id" value="@contact.Id" />
+                            <button type="submit" asp-page-handler="Delete" class="btn btn-danger">
+                                Удалить
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+</body>

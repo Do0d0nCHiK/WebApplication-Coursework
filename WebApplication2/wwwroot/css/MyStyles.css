@@ -1,0 +1,48 @@
+﻿body {
+}
+h1{
+    font-size: 30px;
+    font-family: Elephant;
+}
+.div-header{
+    border-bottom: 5px #00ff21;
+}
+.cars-header {
+    font-family: Georgia;
+    font-size: 45px;
+    align-items: center;
+    text-align: center;
+    color: #0fdb38;
+    text-shadow: 3px 1px 1px rgb(6, 129, 30);
+    -webkit-text-stroke: 0.6px black;
+}
+
+.div-background-dark{
+    color: black;
+}
+.h1-logo{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+.h1-header{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+.h2-logo{
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+}
+.th-table-light{
+    color: white;
+}
+.span-error{
+    background-color: rgb(25,25,25);
+    border-color: rgb(25,25,25);
+}

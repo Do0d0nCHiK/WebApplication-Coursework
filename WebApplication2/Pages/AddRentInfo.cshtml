@@ -1,0 +1,27 @@
+﻿@page
+@model WebApplication2.Pages.AddRentInfoModel
+@{
+}
+<head>
+    
+    <style>
+        body{
+            background-color: rgb(25,25,25);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h1" style="color:white;text-align:center;">Добавить данные об аренде</h1>
+    <form method="post">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control bg-dark text-light" asp-for="ClientID" placeholder="ID клиента" aria-label="ID клиента" required/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="CarID" placeholder="ID машины" aria-label="ID машины" required/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="Period" placeholder="Срок аренды" aria-label="Срок аренды" required title="Недопустимый срок аренды"/>
+            <span class="input-group-text" id="basic-addon1">дней</span>
+        </div>
+        <div class="input-group mb-3">
+            <input type="date" class="form-control bg-dark text-light" asp-for="_date" placeholder="Дата начала аренды" aria-label="Начало аренды" title="Недопустимый год" />
+        </div>
+        <button type="submit" class="btn btn-outline-secondary btn-dark">Добавить</button>
+    </form>
+</body>
