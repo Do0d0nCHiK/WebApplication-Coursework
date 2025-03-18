@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "\u0420\u043E\u043C\u0430\u043D",
+    "LastName": "\u0411\u043E\u0433\u043E\u043C\u043E\u043B\u043E\u0432",
+    "PhoneNumber": "\u002B79655562323",
+    "FatherName": "\u0410\u043D\u0430\u0442\u043E\u043B\u044C\u0435\u0432\u0438\u0447",
+    "Passport": "4767683088"
+  },
+  {
+    "Id": 2,
+    "FirstName": "\u0421\u0435\u0440\u0433\u0435\u0439",
+    "LastName": "\u0428\u0438\u043C\u0430\u043D\u0441\u043A\u0438\u0439",
+    "PhoneNumber": "\u002B79998016476",
+    "FatherName": "\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\u043E\u0432\u0438\u0447",
+    "Passport": "4712735900"
+  },
+  {
+    "Id": 3,
+    "FirstName": "\u0414\u0430\u043D\u0438\u0438\u043B",
+    "LastName": "\u041C\u0430\u0445\u043D\u044F\u0435\u0432",
+    "PhoneNumber": "\u002B79658015115",
+    "FatherName": "\u0418\u0433\u043E\u0440\u0435\u0432\u0438\u0447",
+    "Passport": "1234567899"
+  }
+]

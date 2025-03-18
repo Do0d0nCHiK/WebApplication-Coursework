@@ -13,14 +13,14 @@
     <h1 class="h1 h1-header" style="color:white;">Добавить машину</h1>
     <form method="post">
         <div class="input-group mb-3">
-            <input type="text" class="form-control bg-dark text-light" asp-for="Brand" placeholder="Марка" aria-label="Марка" required maxlength="30" pattern="\D+" title="Неккоректный формат марки автомобиля"/>
-            <input type="text" class="form-control bg-dark text-light" asp-for="Model" placeholder="Модель" aria-label="Модель" required pattern="^[a-zA-Z0-9\s\-]+" title="Некорректный формат модели"/>
-            <input type="text" class="form-control bg-dark text-light" asp-for="Release" placeholder="Год выпуска" aria-label="Год выпуска" required pattern="^(19[0-9][0-9]|201[0-9]|202[0-5])" title="Некорректный формат года" />
+            <input type="text" class="form-control bg-dark text-light" asp-for="Brand" placeholder="Марка" aria-label="Марка" required maxlength="30" pattern="\D+"/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="Model" placeholder="Модель" aria-label="Модель" required />
+            <input type="number" class="form-control bg-dark text-light" asp-for="Release" placeholder="Год выпуска" aria-label="Год выпуска" min="1960" max="2025" title="Год должен быть от 1960-2025" />
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control bg-dark text-light" asp-for="Power" placeholder="Мощность двигателя" aria-label="Мощность" required pattern="^([1-9])\d{1-3}" title="Некорректный формат мощности"/>
+            <input type="number" class="form-control bg-dark text-light" asp-for="Power" placeholder="Мощность двигателя" aria-label="Мощность" required min="50" max="1500" title="Мощность двигателя  должна быть от 50 до 1500 л.с."/>
             <span class="input-group-text" id="basic-addon1">л.с.</span>
-            <input type="text" class="form-control bg-dark text-light" asp-for="Cost" placeholder="Цена аренты" aria-label="Цена аренды" required pattern="^\d+" title="Некорректный формат цены аренды"/>
+            <input type="number" class="form-control bg-dark text-light" asp-for="Cost" placeholder="Цена аренды" aria-label="Цена аренды" required min="500" max="300000" title="Цена аренды должна быть в пределах от 500 до 300000 руб/сут"/>
             <span class="input-group-text" id="basic-addon1">руб./сут.</span>
         </div>
         <div class="input-group mb-3">

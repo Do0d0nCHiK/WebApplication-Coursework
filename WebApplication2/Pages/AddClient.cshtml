@@ -14,27 +14,16 @@
     <h1 class="h1 h1-header" style="color:white;">Добавить клиента</h1>
     <form method="post">
         <div class="input-group mb-1">
-            <span asp-validation-for="FirstName" class="form-control text-danger" style="background-color:rgb(25,25,25);border-color:rgb(25,25,25);"></span>
-            <span asp-validation-for="LastName" class="form-control text-danger" style="background-color:rgb(25,25,25);border-color:rgb(25,25,25);"></span>
-            <span class="form-control text-danger" style="background-color:rgb(25,25,25);border-color:rgb(25,25,25);"></span>
-        </div>
-        <div class="input-group mb-1">
-            <input type="text" class="form-control bg-dark text-light" asp-for="FirstName" placeholder="Имя" aria-label="Имя" required maxlength="15" pattern="^\D+" title="Некорректный формат имени" />
-            <input type="text" class="form-control bg-dark text-light" asp-for="LastName" placeholder="Фамилия" aria-label="Фамилия" required maxlength="30" pattern="^\D+" title="Некорректный формат фамилии"/>
-            <input type="text" class="form-control bg-dark text-light" asp-for="FatherName" placeholder="Отчество" aria-label="Отчество" maxlength="20" pattern="^\D+" title="Некорректный формат отчества"/>
-        </div>
-        <div class="input-group mb-1">
-            <span asp-validation-for="Phone" class="form-control text-danger" style="background-color:rgb(25,25,25);border-color:rgb(25,25,25);"></span>
+            <input type="text" class="form-control bg-dark text-light" asp-for="FirstName" placeholder="Имя" aria-label="Имя" required maxlength="15" pattern="^\D+" title="Длина имени должна не должна превышать 15 символов и состоять только из букв алфавита" />
+            <input type="text" class="form-control bg-dark text-light" asp-for="LastName" placeholder="Фамилия" aria-label="Фамилия" required maxlength="30" pattern="^\D+" title="Длина фамилии не должна превышать 30 символов и состоять только из букв алфавита"/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="FatherName" placeholder="Отчество" aria-label="Отчество" maxlength="20" pattern="^\D+" title="Длина отчества не должна превышать 20 символов и состоять только из букв алфавита"/>
         </div>
         <div class="input-group mb-1">
             <span class="input-group-text" id="basic-addon1">+7</span>
-            <input type="text" class="form-control bg-dark text-light" asp-for="Phone" placeholder="Номер телефона" aria-label="Номер телефона" required pattern="^\d{10}$" title="Некорректный формат номера телефона." />
-        </div>
-        <div class="input-group mb-1">
-            <span asp-validation-for="Passport" class="form-control text-danger" style="background-color:rgb(25,25,25);border-color:rgb(25,25,25);"></span>
+            <input type="tel" class="form-control bg-dark text-light" asp-for="Phone" placeholder="Номер телефона" aria-label="Номер телефона" required pattern="^\d{10}$" title="Норер телефона должен быть указан без кода страны (без +7 или 8)" />
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control bg-dark text-light" asp-for="Passport" placeholder="Серия и номер паспорта" aria-label="Паспорт" required maxlength="10" pattern="^\d{10}" title="Некорректный формат паспорта"/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="Passport" placeholder="Серия и номер паспорта" aria-label="Паспорт" required maxlength="10" pattern="^\d{10}" title="Длина не должна превышать 10 цифр, серия и номер должны писаться слитно/>
         </div>
         <button type="submit" class="btn btn-outline-secondary btn-dark">Добавить</button>
     </form>

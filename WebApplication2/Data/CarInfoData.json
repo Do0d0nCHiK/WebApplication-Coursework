@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Brand": "Toyota",
+    "Model": "Camry IX (XV80)",
+    "Release": "2024",
+    "Power": "204",
+    "NumberPlate": "\u0415738\u041A\u042051",
+    "Cost": "20000"
+  },
+  {
+    "Id": 2,
+    "Brand": "Geely",
+    "Model": "Monjaro",
+    "Release": "2024",
+    "Power": "238",
+    "NumberPlate": "\u0420987\u0421\u042351",
+    "Cost": "10000"
+  },
+  {
+    "Id": 3,
+    "Brand": "Toyota",
+    "Model": "Corolla XII (E210)",
+    "Release": "2024",
+    "Power": "300",
+    "NumberPlate": "\u0421666\u0420\u042351",
+    "Cost": "45000"
+  },
+  {
+    "Id": 4,
+    "Brand": "Porsche",
+    "Model": "911 Turbo S",
+    "Release": "2020",
+    "Power": "650",
+    "NumberPlate": "\u0412777\u041E\u0420777",
+    "Cost": "70000"
+  }
+]

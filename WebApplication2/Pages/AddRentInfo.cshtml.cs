@@ -23,7 +23,7 @@ namespace WebApplication2.Pages
         }
         public IActionResult OnPost()
         {
-            //if (_date.Year < 2010 || _date.Year > 2026) ModelState["_date"].ValidationState = Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid;
+            if (_date.Year < 2010 || _date.Year > 2026) ModelState["_date"].ValidationState = Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid;
             if (!ModelState.IsValid)
             {
                 return Page();
