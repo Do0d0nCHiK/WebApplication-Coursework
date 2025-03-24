@@ -20,32 +20,32 @@
     </form>
     <table class="table">
         <thead>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "RentID"?"RentID_desc":"RentID")">
                     ID    
                 </a>
             </th>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "ClientID"?"ClientID_desc":"ClientID")">
                     Клиент
                 </a>
             </th>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "CarID"?"CarID_desc":"CarID")">
                     Машина
                 </a>
             </th>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "StartDate"?"StartDate_desc":"StartDate")">
                     Начало аренды    
                 </a>
             </th>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "Period"?"Period_desc":"PeriodID")">
                     Дней аренды
                 </a>
             </th>
-            <th class="th-table-light">
+            <th class="th-table-light text-center">
                 <a class="link-light" asp-page="./ViewRent" asp-route-SortOrder="@(Model.SortOrder == "EndDate"?"EndDate_desc":"EndDateID")">
                     Окончание аренды
                 </a>
@@ -58,7 +58,7 @@
                 Contact cnt = Model.Contacts.FirstOrDefault(c => c.Id.ToString() == rentinfo.ClientID);
                 CarInfo carinf = Model.CarInfos.FirstOrDefault(c => c.Id.ToString() == rentinfo.CarID);
                 <tr>
-                    <td class="text-light">@rentinfo.RentID</td>
+                    <td class="text-light align-middle">@rentinfo.RentID</td>
                     <td class="text-light">
                         <table class="table">
                             <thead>
@@ -109,13 +109,13 @@
                             </tbody>
                         </table>
                     </td>
-                    <td class="text-light">@rentinfo.StartDate</td>
-                    <td class="text-light">@rentinfo.Period</td>
-                    <td class="text-light">@rentinfo.EndDate</td>
-                    <td>
+                    <td class="text-light align-middle text-center">@rentinfo.StartDate</td>
+                    <td class="text-light align-middle text-center">@rentinfo.Period</td>
+                    <td class="text-light align-middle text-center">@rentinfo.EndDate</td>
+                    <td class="align-middle">
                         <form method="post">
                             <input type="hidden" name="id" value="@rentinfo.RentID" />
-                            <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Удвлить</button>
+                            <button type="submit" class="btn btn-danger" asp-page-handler="Delete">Удалить</button>
                         </form>
                     </td>
                 </tr>
