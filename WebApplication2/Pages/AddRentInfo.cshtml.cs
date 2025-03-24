@@ -39,7 +39,7 @@ namespace WebApplication2.Pages
                 EndDate = this.EndDate,
             };
             _rentInfoService.AddNewRentInfo(rentinf);
-            return RedirectToPage("Main");
+            return RedirectToPage("./AddRentInfo");
         }
         public void OnGet()
         {

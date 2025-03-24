@@ -1,7 +1,9 @@
 ﻿@page
 @model WebApplication2.Pages.ViewRentModel
 @{
+
 }
+
 <head>
     <link rel="stylesheet" href="~/css/MyStyles.css" />
     <style>
@@ -53,10 +55,60 @@
         <tbody>
             @foreach(var rentinfo in Model.rentInfos)
             {
+                Contact cnt = Model.Contacts.FirstOrDefault(c => c.Id.ToString() == rentinfo.ClientID);
+                CarInfo carinf = Model.CarInfos.FirstOrDefault(c => c.Id.ToString() == rentinfo.CarID);
                 <tr>
                     <td class="text-light">@rentinfo.RentID</td>
-                    <td class="text-light">@rentinfo.ClientID</td>
-                    <td class="text-light">@rentinfo.CarID</td>
+                    <td class="text-light">
+                        <table class="table">
+                            <thead>
+                                <th class="th-table-light">Имя</th>
+                                <th class="th-table-light">Фамилия</th>
+                                <th class="th-table-light">Отчество</th>
+                                <th class="th-table-light">Телефон</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @if(cnt != null)
+                                    {
+                                        <td class="text-light">@cnt.FirstName</td>
+                                        <td class="text-light">@cnt.LastName</td>
+                                        <td class="text-light">@cnt.FatherName</td>
+                                        <td class="text-light">@cnt.PhoneNumber</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-light">N/A</td>
+                                        <td class="text-light">N/A</td>
+                                        <td class="text-light">N/A</td>
+                                        <td class="text-light">N/A</td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="text-light">
+                        <table class="table">
+                            <thead>
+                                <th class="th-table-light">Марка</th>
+                                <th class="th-table-light">Гос.Номер</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @if(carinf != null)
+                                    {
+                                        <td class="text-light">@carinf.Brand</td>
+                                        <td class="text-light">@carinf.NumberPlate</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="text-light">N/A</td>
+                                        <td class="text-light">N/A</td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
                     <td class="text-light">@rentinfo.StartDate</td>
                     <td class="text-light">@rentinfo.Period</td>
                     <td class="text-light">@rentinfo.EndDate</td>

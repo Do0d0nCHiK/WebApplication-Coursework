@@ -43,7 +43,7 @@ namespace WebApplication2.Pages
                 PhoneNumber = Phone,
             };
             _contactService.AddContact(cnt);
-            return RedirectToPage("Main");
+            return RedirectToPage("./AddClient");
         }
         public void OnGet()
         {

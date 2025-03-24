@@ -10,7 +10,7 @@ namespace WebApplication2.Pages
         [BindProperty(SupportsGet =true)]
         public string SearchString { get; set; } = string.Empty;
         [BindProperty(SupportsGet = true)]
-        public string SortOrder { get; set; } = "Brand";
+        public string SortOrder { get; set; } = "ID";
         public ViewCarsParkModel(CarInfoService carInfoService)
         {
             _carInfoService = carInfoService;

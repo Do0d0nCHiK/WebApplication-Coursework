@@ -10,7 +10,7 @@ namespace WebApplication2.Pages
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; } = string.Empty;
         [BindProperty(SupportsGet = true)]
-        public string SortOrder { get; set; } = "FirstName";
+        public string SortOrder { get; set; } = "ID";
         public ViewClientsModel(ContactService contactService)
         {
             _contactService = contactService;
@@ -39,7 +39,7 @@ namespace WebApplication2.Pages
                 "Phone_desc" => contacts.OrderByDescending(c => c.PhoneNumber).ToList(),
                 "Passport_desc" => contacts.OrderByDescending(c => c.Passport).ToList(),
                 "Passport" => contacts.OrderBy(c => c.Passport).ToList(),
-                _ => contacts.OrderBy(c => c.FirstName).ToList(),
+                _ => contacts.OrderBy(c => c.Id).ToList(),
             };
             Contacts = contacts;
         }

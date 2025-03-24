@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.json
+WebApplication2/Data/RentInfoData.json
+WebApplication2/Data/ClientData.json
+WebApplication2/Data/CarInfoData.json
+*.json
+WebApplication2/Data/CarInfoData.json
+WebApplication2/Data/ClientData.json
+WebApplication2/Data/RentInfoData.json

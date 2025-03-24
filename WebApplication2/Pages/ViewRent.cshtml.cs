@@ -6,6 +6,10 @@ namespace WebApplication2.Pages
     public class ViewRentModel : PageModel
     {
         private readonly RentInfoService rentInfoService;
+        private readonly ContactService contactService = new();
+        private readonly CarInfoService carInfoService = new();
+        public List<CarInfo> CarInfos { get; set; } = new();
+        public List<Contact> Contacts { get; set; } = new();
         public List<RentInfo> rentInfos { get; set; } = new();
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; } = string.Empty;
@@ -18,6 +22,9 @@ namespace WebApplication2.Pages
         public void OnGet()
         {
             var rentinfo = rentInfoService.LoadRentInfo();
+            var carinfo = carInfoService.LoadCarInfo();
+            var clientinfo = contactService.LoadContacts();
+            
             if (!string.IsNullOrEmpty(SearchString))
             {
                 rentinfo = rentinfo.Where(c => c.ClientID.Contains(SearchString) ||
@@ -41,6 +48,8 @@ namespace WebApplication2.Pages
                 _ => rentinfo.OrderBy(c => c.RentID).ToList(),
             };
             rentInfos = rentinfo;
+            CarInfos = carinfo;
+            Contacts = clientinfo;
         }
         public IActionResult OnPostDelete(int id)
         {

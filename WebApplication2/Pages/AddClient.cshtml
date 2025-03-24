@@ -23,8 +23,9 @@
             <input type="tel" class="form-control bg-dark text-light" asp-for="Phone" placeholder="Номер телефона" aria-label="Номер телефона" required pattern="^\d{10}$" title="Норер телефона должен быть указан без кода страны (без +7 или 8)" />
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control bg-dark text-light" asp-for="Passport" placeholder="Серия и номер паспорта" aria-label="Паспорт" required maxlength="10" pattern="^\d{10}" title="Длина не должна превышать 10 цифр, серия и номер должны писаться слитно/>
+            <input type="text" class="form-control bg-dark text-light" asp-for="Passport" placeholder="Серия и номер паспорта" aria-label="Паспорт" required maxlength="10" pattern="^\d{10}" title="Длина не должна превышать 10 цифр, серия и номер должны писаться слитно"/>
         </div>
+
         <button type="submit" class="btn btn-outline-secondary btn-dark">Добавить</button>
     </form>
 </body>

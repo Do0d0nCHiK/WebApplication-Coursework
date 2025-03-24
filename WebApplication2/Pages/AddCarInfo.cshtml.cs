@@ -38,7 +38,7 @@ namespace WebApplication2.Pages
                 NumberPlate = PlateNumber,
             };
             _carInfoService.AddNewCarInfo(crinf);
-            return RedirectToPage("./Main");
+            return RedirectToPage("./AddCarInfo");
         }
         public void OnGet()
         {
